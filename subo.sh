@@ -5,4 +5,4 @@ git push
 set GOOS=linux
 set GOARCH=amd64
 go build -ldflags="-s -w" -o bootstrap main.go
-zip main.zip bootstrap
+zip bootstrap.zip bootstrap
