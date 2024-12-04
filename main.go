@@ -15,10 +15,12 @@ import (
 
 func main() {
 	lambda.Start(handlerLambda)
+	// fmt.Println("Hola mundo")
 }
 
 func handlerLambda(ctx context.Context, event events.CognitoEventUserPoolsPostConfirmation) (*events.CognitoEventUserPoolsPostConfirmation, error) {
 	// Your code here
+	fmt.Println("inicia handlerLambda")
 	conf := awsgo.ConfigAWS()
 	if !ValidarParametros() {
 		fmt.Println("No se encontraron los parametros necesarios, enviar secretManager")
