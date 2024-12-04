@@ -4,5 +4,5 @@ git push
 
 set GOOS=linux
 set GOARCH=amd64
-go build -o bootstrap main.go
-zip main.zip bootstrap
+go build -o main main.go
+zip main.zip main
