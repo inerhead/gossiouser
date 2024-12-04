@@ -38,12 +38,17 @@ func handlerLambda(ctx context.Context, event events.CognitoEventUserPoolsPostCo
 
 	}
 
-	secret, errs := bd.ReadSecret(conf)
+	_, errs := bd.ReadSecret(conf)
 	if errs != nil {
 		fmt.Println("Error lectura secret !")
 		return nil, errs
 	}
-	return nil, nil
+	err := bd.SignUp(datos)
+	if err != nil {
+		fmt.Println("Error en el registro", err.Error())
+		return nil, err
+	}
+	return &event, nil
 }
 
 func ValidarParametros() bool {

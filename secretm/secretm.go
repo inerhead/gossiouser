@@ -26,6 +26,6 @@ func GetSecret(cfg aws.Config, secretName string) (*models.SecretRDSJson, error)
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("lectura secret OK !")
+	fmt.Println("lectura secret OK !", secret)
 	return secret, nil
 }
